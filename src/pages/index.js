@@ -3,12 +3,14 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
 import { motion } from "framer-motion"
+import { query } from '@/lib/db'
 
-const Home = () => {  
+const Home = ({posts}) => {  
+  console.log(posts)
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    axios.get('https://api.npoint.io/4a8d62649d30ab3f091e', {
+    axios.get('https://hellofaizan.me/api/lanyard', {
       method: 'GET',
     })
       .then((res) => res.json())
@@ -30,6 +32,15 @@ const Home = () => {
     </motion.div>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const posts = await query('SELECT * FROM posts');
+  return {
+    props: {
+      posts,
+    },
+  };
 }
 
 export default Home
