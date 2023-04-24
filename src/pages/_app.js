@@ -1,11 +1,17 @@
 import '@/styles/globals.css'
 import Head from 'next/head'
 import "bootstrap-icons/font/bootstrap-icons.css";
+// 1. import `NextUIProvider` component
+import { NextUIProvider, createTheme } from '@nextui-org/react';
+
+// 2. create a custom theme
+const darkTheme = createTheme({type: 'dark'});
+
 
 export default function App({ Component, pageProps }) {
   return (
     <>
-    <Head>
+      <Head>
         <meta charSet="utf-8" />
         <title>HelloFaizan - Software Enthusias Portfolio</title>
         <link rel="icon" href="/Dfaizan.png" />
@@ -51,9 +57,10 @@ export default function App({ Component, pageProps }) {
           content="https://anshrathod.com/intro_image_meta.png"
         />
       </Head>
-            <div className="text-black dark:text-white flex flex-row w-full h-full bg-gradient-to-bl from-white to-[#e0e0e0] dark:from-[#171717] dark:to-[#1c1c1c] min-h-screen">
-              <Component {...pageProps} />
-            </div>
+
+      <NextUIProvider theme={darkTheme}>
+        <Component {...pageProps} />
+      </NextUIProvider>
     </>
   )
 }
