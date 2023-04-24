@@ -4,7 +4,10 @@
 
 # How to run
 
-### First clone the repository and install the dependencies: ```yarn add axios bootstrap-icons```
+### First clone the repository and install the dependencies: 
+```
+yarn
+```
 
 Then simply run the following command to start the development server:
 
@@ -13,6 +16,11 @@ yarn dev
 ```
 
 That's it! You can now start developing your NextJs app.
+
+## Tutorial Video of Next UI 
+```
+https://www.youtube.com/watch?v=NZShdCjvwb8
+```
 
 # Join Discord 💻
 
