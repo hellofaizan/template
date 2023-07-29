@@ -1,6 +1,5 @@
 import React from 'react'
-import { Button, Text } from '@nextui-org/react';
-import { css } from '@nextui-org/react';
+import Link from 'next/link'
 import { motion } from "framer-motion"
 
 const Home = () => {
@@ -21,67 +20,14 @@ const Home = () => {
   return (
     <>
       <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
+        initial={{ opacity: 0, scale: 0.93 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.2 }}>
-        <p className="text-3xl font-bold underline">
-          Hello World
-        </p>
-        <Button
-          auto
-          as="a"
-          rel="noopener noreferrer"
-          target="_blank"
-          href="https://github.com/nextui-org/nextui"
-          css={{
-            borderRadius: '$xs', // radii.xs
-            border: '$space$1 solid transparent',
-            background: '$pink800', // colors.pink800
-            color: '$pink100',
-            height: '$12', // space[12]
-            boxShadow: '$md', // shadows.md
-            '&:hover': {
-              background: '$pink100',
-              color: '$pink800',
-            },
-            '&:active': {
-              background: '$pink200',
-            },
-            '&:focus': {
-              borderColor: '$pink400',
-            },
-          }}>Click me</Button>
-
-<Text
-      h1
-      size={60}
-      css={{
-        textGradient: "45deg, $blue600 -20%, $pink600 50%",
-      }}
-      weight="bold"
-    >
-      Let&apos;s
-    </Text>
-    <Text
-      h1
-      size={60}
-      css={{
-        textGradient: "45deg, $purple600 -20%, $pink600 100%",
-      }}
-      weight="bold"
-    >
-      Make the Web
-    </Text>
-    <Text
-      h1
-      size={60}
-      css={{
-        textGradient: "45deg, $yellow600 -20%, $red600 100%",
-      }}
-      weight="bold"
-    >
-      Prettier
-    </Text>
+        <div className="grid h-screen px-4 place-content-center">
+          <div className="text-center">
+            <h1 className="font-black text-gray-200 text-3xl">Lets build something new 🚀</h1>
+          </div>
+        </div>
 
       </motion.div>
     </>
