@@ -5,6 +5,8 @@ import { headers } from "next/headers";
 
 import { TRPCReactProvider } from "~/trpc/react";
 
+import { Toaster } from "./_components/ui/toaster"
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -25,6 +27,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`font-sans ${inter.variable}`}>
         <TRPCReactProvider headers={headers()}>{children}</TRPCReactProvider>
+        <Toaster />
       </body>
     </html>
   );

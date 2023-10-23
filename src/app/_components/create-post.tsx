@@ -4,14 +4,19 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import { api } from "~/trpc/react";
+import { useToast } from "./ui/use-toast"
 
 export function CreatePost() {
+  const { toast } = useToast()
   const router = useRouter();
   const [name, setName] = useState("");
 
   const createPost = api.post.create.useMutation({
     onSuccess: () => {
       router.refresh();
+      toast({
+        description: "Post created successfully",
+      })
       setName("");
     },
   });
