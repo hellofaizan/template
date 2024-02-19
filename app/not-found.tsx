@@ -1,5 +1,4 @@
 import { buttonVariants } from '@/components/ui/button';
-import { cva } from 'class-variance-authority';
 import { AlertTriangle, ChevronLeft } from 'lucide-react';
 import { NextPage } from 'next';
 import Link from 'next/link';
