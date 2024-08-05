@@ -3,8 +3,13 @@
  * for Docker builds.
  */
 await import("./src/env.js");
+const isProduction = process.env.NODE_ENV === "production";
 
 /** @type {import("next").NextConfig} */
-const config = {};
+const config = {
+  eslint: {
+    ignoreDuringBuilds: isProduction,
+  },
+};
 
 export default config;
