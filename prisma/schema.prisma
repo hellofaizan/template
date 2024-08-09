@@ -54,3 +54,32 @@ model User {
     image             String?
     accounts          Account[]
 }
+
+enum STATUS {
+    COMPLETED
+    REFUNDED
+}
+
+model Purchase {
+    id          String   @id @default(cuid())
+    orderNumber Int      @unique
+    userId      String
+    userName    String?
+    userEmail   String?
+    receipt     String
+    price       String
+    tax         String?
+    variantId   Int
+    variantName String
+    status      STATUS   @default(COMPLETED)
+    createdAt   DateTime @default(now())
+}
+
+model webhookEvent {
+    id              String   @id @default(cuid())
+    createdAt       DateTime @default(now())
+    eventName       String
+    processed       Boolean  @default(false)
+    body            Json
+    processingError String?
+}

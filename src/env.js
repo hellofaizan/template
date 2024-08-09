@@ -20,10 +20,14 @@ export const env = createEnv({
       // Since NextAuth.js automatically uses the VERCEL_URL if present.
       (str) => process.env.VERCEL_URL ?? str,
       // VERCEL_URL doesn't include `https` so it cant be validated as a URL
-      process.env.VERCEL ? z.string() : z.string().url()
+      process.env.VERCEL ? z.string() : z.string().url(),
     ),
     DISCORD_CLIENT_ID: z.string(),
     DISCORD_CLIENT_SECRET: z.string(),
+    LEMONSQUEEZY_API_KEY: z.string(),
+    LEMONSQUEEZY_STORE_ID: z.string(),
+    LEMONSQUEEZY_WEBHOOK_SECRET: z.string(),
+    WEBHOOK_URL: z.string().url(),
   },
 
   /**
@@ -33,7 +37,7 @@ export const env = createEnv({
    */
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string(),
-   
+    NEXT_PUBLIC_LS_6D_VARRIENT_ID: z.string(),
   },
 
   /**
@@ -47,6 +51,11 @@ export const env = createEnv({
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     DISCORD_CLIENT_ID: process.env.DISCORD_CLIENT_ID,
     DISCORD_CLIENT_SECRET: process.env.DISCORD_CLIENT_SECRET,
+    LEMONSQUEEZY_API_KEY: process.env.LEMONSQUEEZY_API_KEY,
+    LEMONSQUEEZY_STORE_ID: process.env.LEMONSQUEEZY_STORE_ID,
+    LEMONSQUEEZY_WEBHOOK_SECRET: process.env.LEMONSQUEEZY_WEBHOOK_SECRET,
+    WEBHOOK_URL: process.env.WEBHOOK_URL,
+    NEXT_PUBLIC_LS_6D_VARRIENT_ID: process.env.NEXT_PUBLIC_LS_6D_VARRIENT_ID,
   },
   /**
    * Run `build` or `dev` with `SKIP_ENV_VALIDATION` to skip env validation. This is especially
